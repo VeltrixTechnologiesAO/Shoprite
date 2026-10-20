@@ -1,0 +1,343 @@
+/* ═══════════════════════════════════════════════════════
+   Imagens completas (media-box)
+   ═══════════════════════════════════════════════════════ */
+.media-box {
+  position: relative;
+  overflow: hidden;
+  background: var(--sr-bg-alt);
+}
+
+.media-box-bg,
+.media-box-img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.media-box-bg {
+  object-fit: cover;
+  transform: scale(1.25);
+  filter: blur(22px) saturate(1.1) brightness(.96);
+  pointer-events: none;
+}
+
+.media-box-img { object-fit: contain; }
+
+.is-broken > .media-box-bg,
+.is-broken > .media-box-img { display: none; }
+
+.media-box.is-broken::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, var(--sr-bg-alt) 0 12px, #fff 12px 24px);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Hero da página — texto de um lado, imagem completa do outro
+   ═══════════════════════════════════════════════════════ */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  isolation: isolate;
+  background:
+    radial-gradient(60% 90% at 100% 0%, rgba(255, 209, 0, .20) 0%, transparent 60%),
+    linear-gradient(105deg, #0F172A 0%, #8B050F 48%, var(--sr-red) 100%);
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--sr-yellow);
+}
+
+.page-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 4rem) 1.25rem;
+}
+
+.page-hero-copy { max-width: 620px; }
+
+.page-hero-copy h1 {
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  margin: .75rem 0 1rem;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+.page-hero-copy p {
+  color: rgba(255, 255, 255, .92);
+  font-size: clamp(.92rem, 1.6vw, 1.05rem);
+  max-width: 620px;
+}
+
+.page-hero-media {
+  --ratio: 16 / 10;
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .35);
+}
+
+.badge-light {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+}
+
+.section-head-center {
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-head-center .section-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Intro
+   ═══════════════════════════════════════════════════════ */
+.mercado-intro { padding: 4rem 0 2rem; }
+
+.mercado-intro-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mercado-intro-inner h2 {
+  margin: .5rem 0 1rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -.025em;
+}
+
+.mercado-intro-inner p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Serviços — cartões com imagens inteiras
+   ═══════════════════════════════════════════════════════ */
+.mercado-servicos-section { padding: 4rem 0; }
+
+.mercado-servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mercado-servico-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--sr-border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .05), 0 8px 24px rgba(15, 23, 42, .04);
+  transition: transform .3s cubic-bezier(.22,.61,.36,1),
+              box-shadow .3s cubic-bezier(.22,.61,.36,1),
+              border-color .3s ease;
+}
+
+.mercado-servico-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(227, 6, 19, .25);
+  box-shadow: 0 4px 6px rgba(15, 23, 42, .05),
+              0 24px 48px rgba(227, 6, 19, .15);
+}
+
+/* Moldura fixa 16:10, imagem inteira (media-box trata do contain + fundo) */
+.mercado-servico-media {
+  --ratio: 16 / 10;
+  aspect-ratio: var(--ratio);
+  border-radius: 0;
+}
+
+.mercado-servico-card:hover .mercado-servico-media .media-box-img {
+  transform: scale(1.04);
+}
+
+.mercado-servico-num {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #E30613 0%, #B0040F 100%);
+  color: #fff;
+  font-weight: 900;
+  font-size: .95rem;
+  letter-spacing: -.02em;
+  box-shadow: 0 8px 20px rgba(227, 6, 19, .35);
+}
+
+.mercado-servico-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  flex: 1;
+}
+
+.mercado-servico-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(227, 6, 19, .08);
+  color: var(--sr-red);
+  margin-bottom: .35rem;
+  transition: background .2s ease, color .2s ease;
+}
+
+.mercado-servico-icon svg { width: 22px; height: 22px; }
+
+.mercado-servico-card:hover .mercado-servico-icon {
+  background: var(--sr-red);
+  color: #fff;
+}
+
+.mercado-servico-body h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--sr-ink);
+  letter-spacing: -.02em;
+  line-height: 1.3;
+}
+
+.mercado-servico-body p {
+  font-size: .95rem;
+  color: var(--sr-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CTA
+   ═══════════════════════════════════════════════════════ */
+.mercado-cta-section { padding: 4rem 0; }
+
+.mercado-cta {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(80% 120% at 100% 0%, rgba(255, 209, 0, .2) 0%, transparent 55%),
+    linear-gradient(135deg, #E30613 0%, #B0040F 100%);
+  color: #fff;
+  box-shadow: 0 20px 48px rgba(227, 6, 19, .25);
+  overflow: hidden;
+}
+
+.mercado-cta-copy h2 { color: #fff; margin: .5rem 0 .75rem; }
+.mercado-cta-copy p { color: rgba(255, 255, 255, .9); margin-bottom: 1.75rem; max-width: 520px; }
+
+.mercado-cta-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+.mercado-cta-actions .btn .icon { display: inline-flex; margin-left: .35rem; }
+.mercado-cta-actions .btn .icon svg { width: 16px; height: 16px; transition: transform .2s ease; }
+.mercado-cta-actions .btn:hover .icon svg { transform: translateX(3px); }
+
+.btn-ghost-light { color: #fff; border-color: rgba(255, 255, 255, .4); }
+.btn-ghost-light:hover { border-color: #fff; background: rgba(255, 255, 255, .08); }
+
+.mercado-cta-visual {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .25));
+  animation: floatPin 3.5s ease-in-out infinite;
+}
+
+.mercado-cta-visual svg { width: 100px; height: 100px; stroke-width: 1.4; }
+
+@keyframes floatPin {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Responsivo
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .mercado-servicos-grid { gap: 1.5rem; }
+
+  .mercado-cta {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+    text-align: center;
+  }
+  .mercado-cta-copy p { margin-left: auto; margin-right: auto; }
+  .mercado-cta-actions { justify-content: center; }
+  .mercado-cta-visual svg { width: 72px; height: 72px; }
+}
+
+@media (max-width: 900px) {
+  /* Hero empilhado: imagem completa em cima, texto por baixo */
+  .page-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .page-hero-media { order: -1; }
+  .page-hero-copy { max-width: none; }
+}
+
+@media (max-width: 760px) {
+  .page-hero-copy h1 { font-size: clamp(1.5rem, 6.5vw, 2rem); }
+  .page-hero-copy p { font-size: .92rem; line-height: 1.5; }
+  .page-hero-media { border-radius: var(--radius-sm); }
+
+  .mercado-servicos-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+
+  .mercado-cta { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 520px) {
+  .page-hero-copy p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mercado-servico-card,
+  .mercado-servico-media .media-box-img,
+  .mercado-cta-visual,
+  .media-box-bg {
+    transition: none;
+    animation: none;
+  }
+}

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#E30613" />
+  <meta name="description" content="Shoprite Angola — supermercado com os melhores preços. 25+ lojas em Angola desde 2003." />
+  <title>Shoprite Angola</title>
+
+  <link rel="icon" type="image/png" href="/static/assets/logo.png" sizes="any" />
+  <link rel="apple-touch-icon" href="/static/assets/logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/static/css/base.css" />
+  <link rel="stylesheet" href="/static/css/layout.css" />
+  <link rel="stylesheet" href="/static/css/components.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#/" class="brand" aria-label="Shoprite Angola — início">
+        <img src="/static/assets/logo.png" alt="Shoprite Angola" class="brand-logo" width="44" height="44" />
+        <span class="brand-text">Shoprite</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#/ofertas">Ofertas</a>
+        <a href="#/receitas">Receitas</a>
+        <div class="nav-dropdown nav-mega">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Explorar Shoprite
+            <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <div class="dropdown-menu mega-menu" role="menu">
+            <div class="mega-col">
+              <h5>Serviços</h5>
+              <a href="#/mercado-monetario" role="menuitem">
+                <span class="mega-icon mega-icon-money"></span>
+                <span>
+                  <strong>Mercado Monetário</strong>
+                  <small>Serviços financeiros</small>
+                </span>
+              </a>
+              <a href="#/saude-beleza" role="menuitem">
+                <span class="mega-icon mega-icon-health"></span>
+                <span>
+                  <strong>Saúde e Beleza</strong>
+                  <small>Higiene e cosmética</small>
+                </span>
+              </a>
+              <a href="#/lovies" role="menuitem">
+                <span class="mega-icon mega-icon-baby"></span>
+                <span>
+                  <strong>Lovies</strong>
+                  <small>Cuidados do bebé</small>
+                </span>
+              </a>
+              <a href="#/talho" role="menuitem">
+                <span class="mega-icon mega-icon-meat"></span>
+                <span>
+                  <strong>Talho</strong>
+                  <small>Carnes frescas</small>
+                </span>
+              </a>
+              <a href="#/bebidas" role="menuitem">
+                <span class="mega-icon mega-icon-drinks"></span>
+                <span>
+                  <strong>Loja de Bebidas</strong>
+                  <small>Vinhos e refrigerantes</small>
+                </span>
+              </a>
+              <a href="#/agricultura" role="menuitem">
+                <span class="mega-icon mega-icon-agro"></span>
+                <span>
+                  <strong>Agricultura Angolana</strong>
+                  <small>Produtores locais</small>
+                </span>
+              </a>
+            </div>
+
+            <div class="mega-col">
+              <h5>Institucional</h5>
+              <a href="#/sobre" role="menuitem">
+                <span class="mega-icon mega-icon-building"></span>
+                <span>
+                  <strong>Quem somos</strong>
+                  <small>Desde 2003</small>
+                </span>
+              </a>
+              <a href="#/competicoes" role="menuitem">
+                <span class="mega-icon mega-icon-trophy"></span>
+                <span>
+                  <strong>Competições</strong>
+                  <small>Ganhe prémios</small>
+                </span>
+              </a>
+              <a href="#/contacto" role="menuitem">
+                <span class="mega-icon mega-icon-briefcase"></span>
+                <span>
+                  <strong>Carreiras</strong>
+                  <small>Trabalhe connosco</small>
+                </span>
+              </a>
+            </div>
+
+            <div class="mega-col">
+              <h5>Encontre-nos</h5>
+              <a href="#/lojas" role="menuitem">
+                <span class="mega-icon mega-icon-pin"></span>
+                <span>
+                  <strong>Localizador de lojas</strong>
+                  <small>25+ em Angola</small>
+                </span>
+              </a>
+              <a href="#/ofertas" role="menuitem">
+                <span class="mega-icon mega-icon-news"></span>
+                <span>
+                  <strong>Folhetos e ofertas</strong>
+                  <small>Promoções da semana</small>
+                </span>
+              </a>
+              <a href="#/contacto" role="menuitem">
+                <span class="mega-icon mega-icon-mail"></span>
+                <span>
+                  <strong>Contacte-nos</strong>
+                  <small>Resposta em 24h</small>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#/competicoes">Competições</a>
+        <a href="#/contacto">Contacte-nos</a>
+        <a href="#/lojas">Localizador de lojas</a>
+      </nav>
+
+      <div class="header-actions">
+        <select class="lang-select" aria-label="Idioma">
+          <option value="pt">PT</option>
+          <option value="en">EN</option>
+        </select>
+
+        <a href="https://wa.me/244942355747" target="_blank" rel="noopener" class="whatsapp-btn" aria-label="Falar no WhatsApp">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <span class="whatsapp-label">WhatsApp</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="app" role="main"></main>
+
+  <footer class="site-footer">
+    <div class="footer-accent" aria-hidden="true"></div>
+
+    <div class="container footer-main">
+      <div class="footer-brand-col">
+        <a href="#/" class="footer-brand" aria-label="Shoprite Angola — início">
+          <img src="/static/assets/logo.png" alt="Shoprite Angola" class="brand-logo" width="44" height="44" />
+          <span class="footer-brand-text">Shoprite<span class="footer-brand-sub">Angola</span></span>
+        </a>
+
+        <p class="footer-tagline">Poupar todos os dias, para todos. Em Angola desde 2003.</p>
+
+        <div class="footer-socials">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="footer-social">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/shoprite_angola?srtk=MWJ4Nmh0cmU2Z3FzeA==" target="_blank" rel="noopener" aria-label="Instagram" class="footer-social">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="mailto:geral@shoprite.ao" aria-label="Email" class="footer-social">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#/sobre">Quem somos</a></li>
+          <li><a href="#/competicoes">Competições</a></li>
+          <li><a href="#/contacto">Carreiras</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="#/ofertas">Folhetos e ofertas</a></li>
+          <li><a href="#/receitas">Receitas</a></li>
+          <li><a href="#/lojas">Localizador de lojas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Apoio</h4>
+        <ul>
+          <li><a href="tel:+244942355747">(+244) 94 235 5747</a></li>
+          <li><a href="mailto:geral@shoprite.ao">geral@shoprite.ao</a></li>
+          <li><a href="#/contacto">Formulário de contacto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <small>© <span id="year"></span> Shoprite Angola. Todos os direitos reservados.</small>
+
+        <ul class="footer-legal">
+          <li><a href="#/privacidade">Privacidade</a></li>
+          <li><a href="#/termos">Termos</a></li>
+          <li><a href="#/cookies">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-drawer" id="mobile-drawer" hidden aria-hidden="true">
+    <div class="mobile-drawer-backdrop" data-drawer-close></div>
+
+    <aside class="mobile-drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <header class="mobile-drawer-head">
+        <a href="#/" class="mobile-brand" data-drawer-close>
+          <img src="/static/assets/logo.png" alt="Shoprite Angola" width="40" height="40" />
+          <span>Shoprite<span class="mobile-brand-sub">Angola</span></span>
+        </a>
+        <button type="button" class="mobile-drawer-close" data-drawer-close aria-label="Fechar menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </header>
+
+      <nav class="mobile-drawer-nav" aria-label="Menu principal">
+        <a href="#/ofertas" class="mobile-nav-link" data-drawer-close>
+          <span class="mobile-nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0V9"/><path d="M18 14h-8"/><path d="M15 18h-5"/></svg>
+          </span>
+          <span class="mobile-nav-text">Ofertas</span>
+        </a>
+
+        <a href="#/receitas" class="mobile-nav-link" data-drawer-close>
+          <span class="mobile-nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg>
+          </span>
+          <span class="mobile-nav-text">Receitas</span>
+        </a>
+
+        <details class="mobile-nav-group">
+          <summary class="mobile-nav-link">
+            <span class="mobile-nav-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 10-5 5 5 5"/><path d="m15 10 5 5-5 5"/></svg>
+            </span>
+            <span class="mobile-nav-text">Explorar Shoprite</span>
+            <svg class="mobile-nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </summary>
+
+          <div class="mobile-nav-sub">
+            <span class="mobile-nav-subtitle">Serviços</span>
+            <a href="#/mercado-monetario" data-drawer-close>Mercado Monetário</a>
+            <a href="#/saude-beleza" data-drawer-close>Saúde e Beleza</a>
+            <a href="#/lovies" data-drawer-close>Lovies</a>
+            <a href="#/talho" data-drawer-close>Talho</a>
+            <a href="#/bebidas" data-drawer-close>Loja de Bebidas</a>
+            <a href="#/agricultura" data-drawer-close>Agricultura Angolana</a>
+
+            <span class="mobile-nav-subtitle">Institucional</span>
+            <a href="#/sobre" data-drawer-close>Quem somos</a>
+            <a href="#/competicoes" data-drawer-close>Competições</a>
+            <a href="#/contacto" data-drawer-close>Carreiras</a>
+
+            <span class="mobile-nav-subtitle">Encontre-nos</span>
+            <a href="#/lojas" data-drawer-close>Localizador de lojas</a>
+            <a href="#/ofertas" data-drawer-close>Folhetos e ofertas</a>
+            <a href="#/contacto" data-drawer-close>Contacte-nos</a>
+          </div>
+        </details>
+
+        <a href="#/competicoes" class="mobile-nav-link" data-drawer-close>
+          <span class="mobile-nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          </span>
+          <span class="mobile-nav-text">Competições</span>
+        </a>
+
+        <a href="#/contacto" class="mobile-nav-link" data-drawer-close>
+          <span class="mobile-nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </span>
+          <span class="mobile-nav-text">Contacte-nos</span>
+        </a>
+
+        <a href="#/lojas" class="mobile-nav-link" data-drawer-close>
+          <span class="mobile-nav-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <span class="mobile-nav-text">Localizador de lojas</span>
+        </a>
+      </nav>
+
+      <footer class="mobile-drawer-foot">
+        <a href="https://wa.me/244942355747" target="_blank" rel="noopener" class="mobile-drawer-cta">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          <span>Falar no WhatsApp</span>
+        </a>
+
+        <div class="mobile-drawer-socials">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/shoprite_angola?srtk=MWJ4Nmh0cmU2Z3FzeA==" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="mailto:geral@shoprite.ao" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+      </footer>
+    </aside>
+  </div>
+
+  <script type="module" src="/static/js/app.js"></script>
+</body>
+</html>

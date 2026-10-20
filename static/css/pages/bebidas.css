@@ -1,0 +1,456 @@
+/* ═══════════════════════════════════════════════════════
+   Imagens completas (media-box)
+   ═══════════════════════════════════════════════════════ */
+.media-box {
+  position: relative;
+  overflow: hidden;
+  background: var(--sr-bg-alt);
+}
+
+.media-box-bg,
+.media-box-img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.media-box-bg {
+  object-fit: cover;
+  transform: scale(1.25);
+  filter: blur(22px) saturate(1.1) brightness(.96);
+  pointer-events: none;
+}
+
+.media-box-img { object-fit: contain; }
+
+.is-broken > .media-box-bg,
+.is-broken > .media-box-img { display: none; }
+
+.media-box.is-broken::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(135deg, var(--sr-bg-alt) 0 12px, #fff 12px 24px);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Hero da página — texto de um lado, imagem completa do outro
+   ═══════════════════════════════════════════════════════ */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  isolation: isolate;
+  background:
+    radial-gradient(60% 90% at 100% 0%, rgba(255, 209, 0, .20) 0%, transparent 60%),
+    linear-gradient(105deg, #0F172A 0%, #8B050F 48%, var(--sr-red) 100%);
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--sr-yellow);
+}
+
+.page-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 4rem) 1.25rem;
+}
+
+.page-hero-copy { max-width: 620px; }
+
+.page-hero-copy h1 {
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  margin: .75rem 0 1rem;
+  font-size: clamp(1.6rem, 4.5vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.page-hero-copy p {
+  color: rgba(255, 255, 255, .92);
+  font-size: clamp(.92rem, 1.6vw, 1.05rem);
+  max-width: 660px;
+}
+
+.page-hero-copy strong { color: #FFD100; }
+
+.page-hero-media {
+  --ratio: 16 / 10;
+  width: 100%;
+  aspect-ratio: var(--ratio);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, .22);
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .35);
+}
+
+.badge-light {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Intro + imagem horizontal
+   ═══════════════════════════════════════════════════════ */
+.bebidas-intro { padding: 4rem 0 3rem; }
+
+.bebidas-intro-inner {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.bebidas-intro-inner h2 {
+  margin: .5rem 0 1rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  letter-spacing: -.025em;
+}
+
+.bebidas-intro-inner p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0;
+  color: var(--sr-muted);
+}
+
+/* Moldura horizontal larga — imagem inteira, sem cortes */
+.bebidas-image-h {
+  --ratio: 21 / 9;
+  aspect-ratio: var(--ratio);
+  max-height: 600px;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, .15);
+}
+
+.bebidas-image-h:hover .media-box-img { transform: scale(1.02); }
+
+/* ═══════════════════════════════════════════════════════
+   Destaque (mojito)
+   ═══════════════════════════════════════════════════════ */
+.bebidas-destaque { padding: 5rem 0; }
+
+.bebidas-destaque-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.bebidas-destaque-text h2 {
+  margin: .5rem 0 .5rem;
+  font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+  letter-spacing: -.025em;
+}
+
+.bebidas-destaque-sub {
+  font-size: 1.05rem;
+  color: var(--sr-red);
+  font-weight: 600;
+  margin: 0 0 1.5rem;
+}
+
+.bebidas-destaque-text > p {
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0 0 2rem;
+  color: #334155;
+}
+
+.bebidas-receita {
+  background: #fff;
+  border: 1px solid var(--sr-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .04);
+}
+
+.bebidas-receita h3 {
+  margin: 0 0 .85rem;
+  font-size: .8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--sr-red);
+  padding-bottom: .5rem;
+  border-bottom: 1px solid var(--sr-border);
+}
+
+.bebidas-receita h3 + .bebidas-receita-list {
+  margin-bottom: 1.5rem;
+}
+
+.bebidas-receita-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: passo;
+}
+
+.bebidas-receita-list li {
+  position: relative;
+  padding: .4rem 0 .4rem 1.75rem;
+  font-size: .92rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.bebidas-receita-list li::before {
+  content: "";
+  position: absolute;
+  left: .25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sr-red);
+}
+
+ol.bebidas-receita-list {
+  counter-reset: step;
+}
+
+ol.bebidas-receita-list li {
+  counter-increment: step;
+  padding-left: 2.25rem;
+}
+
+ol.bebidas-receita-list li::before {
+  content: counter(step);
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  background: var(--sr-red);
+  color: #fff;
+  border-radius: 50%;
+  font-size: .7rem;
+  font-weight: 800;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.bebidas-destaque-cta {
+  gap: .5rem;
+}
+
+.bebidas-destaque-cta .icon svg {
+  width: 16px;
+  height: 16px;
+  transition: transform .2s ease;
+}
+
+.bebidas-destaque-cta:hover .icon svg { transform: translateX(3px); }
+
+/* Moldura 4:5 do destaque — imagem inteira + badge 18+ por cima */
+.bebidas-destaque-visual {
+  --ratio: 4 / 5;
+  aspect-ratio: var(--ratio);
+  min-height: 480px;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, .18);
+}
+
+.bebidas-destaque-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .45rem .85rem;
+  background: rgba(255, 255, 255, .96);
+  color: var(--sr-ink);
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.bebidas-destaque-badge svg { width: 12px; height: 12px; color: var(--sr-red); }
+
+/* ═══════════════════════════════════════════════════════
+   Aviso
+   ═══════════════════════════════════════════════════════ */
+.bebidas-aviso-section { padding: 0 0 4rem; }
+
+.bebidas-aviso {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(227, 6, 19, .06) 0%, rgba(255, 209, 0, .08) 100%);
+  border: 1px solid rgba(227, 6, 19, .2);
+  border-radius: 16px;
+  border-left: 4px solid var(--sr-red);
+}
+
+.bebidas-aviso-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--sr-red);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.bebidas-aviso-icon svg { width: 22px; height: 22px; }
+
+.bebidas-aviso strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--sr-ink);
+  margin-bottom: .25rem;
+}
+
+.bebidas-aviso p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CTA
+   ═══════════════════════════════════════════════════════ */
+.bebidas-cta-section { padding: 3rem 0 5rem; }
+
+.bebidas-cta {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding: 3rem;
+  border-radius: 18px;
+  background:
+    radial-gradient(80% 120% at 100% 0%, rgba(255, 209, 0, .2) 0%, transparent 55%),
+    linear-gradient(135deg, #E30613 0%, #B0040F 100%);
+  color: #fff;
+  box-shadow: 0 20px 48px rgba(227, 6, 19, .25);
+  overflow: hidden;
+}
+
+.bebidas-cta-copy h2 { color: #fff; margin: .5rem 0 .75rem; }
+.bebidas-cta-copy p { color: rgba(255, 255, 255, .9); margin-bottom: 1.75rem; max-width: 520px; }
+
+.bebidas-cta-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+.bebidas-cta-actions .btn .icon { display: inline-flex; margin-left: .35rem; }
+.bebidas-cta-actions .btn .icon svg { width: 16px; height: 16px; transition: transform .2s ease; }
+.bebidas-cta-actions .btn:hover .icon svg { transform: translateX(3px); }
+
+.btn-ghost-light { color: #fff; border-color: rgba(255, 255, 255, .4); }
+.btn-ghost-light:hover { border-color: #fff; background: rgba(255, 255, 255, .08); }
+
+.bebidas-cta-visual {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, .25));
+  animation: floatPin 3.5s ease-in-out infinite;
+}
+
+.bebidas-cta-visual svg { width: 100px; height: 100px; stroke-width: 1.4; }
+
+@keyframes floatPin {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Responsivo
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .bebidas-destaque-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .bebidas-destaque-visual {
+    --ratio: 16 / 11;
+    min-height: 0;
+  }
+
+  .bebidas-cta {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+    text-align: center;
+  }
+  .bebidas-cta-copy p { margin-left: auto; margin-right: auto; }
+  .bebidas-cta-actions { justify-content: center; }
+  .bebidas-cta-visual svg { width: 72px; height: 72px; }
+}
+
+@media (max-width: 900px) {
+  /* Hero empilhado: imagem completa em cima, texto por baixo */
+  .page-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .page-hero-media { order: -1; }
+  .page-hero-copy { max-width: none; }
+}
+
+@media (max-width: 760px) {
+  .page-hero-copy h1 { font-size: clamp(1.5rem, 6.5vw, 2rem); }
+  .page-hero-copy p { font-size: .92rem; line-height: 1.5; }
+  .page-hero-media { border-radius: var(--radius-sm); }
+
+  .bebidas-image-h { --ratio: 16 / 10; border-radius: 14px; }
+
+  .bebidas-receita { padding: 1.25rem; }
+  .bebidas-destaque-visual { --ratio: 4 / 3; }
+
+  .bebidas-aviso { padding: 1.25rem 1.5rem; gap: 1rem; }
+  .bebidas-aviso-icon { width: 38px; height: 38px; }
+  .bebidas-aviso-icon svg { width: 18px; height: 18px; }
+
+  .bebidas-cta { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 520px) {
+  .page-hero-copy p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .bebidas-image-h { --ratio: 4 / 3; }
+  .bebidas-destaque-visual { --ratio: 1 / 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bebidas-image-h .media-box-img,
+  .bebidas-cta-visual,
+  .media-box-bg {
+    transition: none;
+    animation: none;
+  }
+}
